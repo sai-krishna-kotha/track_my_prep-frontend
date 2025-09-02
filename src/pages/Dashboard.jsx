@@ -10,6 +10,7 @@ import EditProblemModal from '../components/dashboard/EditProblemModal';
 import DeleteConfirmationModal from '../components/dashboard/DeleteConfirmationModal';
 import ProblemLogTable from '../components/dashboard/ProblemLogTable';
 import { useProblemAnalytics } from '../hooks/useProblemAnalytics';
+import DashboardSkeleton from '../components/dashboard/DashboardSkeleton';
 
 function Dashboard() {
   const [problems, setProblems] = useState([]);
@@ -59,7 +60,7 @@ function Dashboard() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <DashboardSkeleton />;
   }
 
   return (
